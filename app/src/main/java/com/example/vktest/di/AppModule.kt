@@ -8,7 +8,13 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.Response
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -16,18 +22,5 @@ interface AppModule {
 
     @Binds
     fun currencyRepository(currencyRepositoryImpl: CurrencyRepositoryImpl): CurrencyRepository
-
-    companion object {
-        const val BASE_URL = "https://app.currencyapi.com/"
-        const val API_KEY = "cur_live_riCHmMpBy9P9WtmWoPlJs6wzLuSkgbxrYOwY0dvI"
-
-        @Provides
-        private fun provideRetrofit() = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .build()
-        @Provides
-        private fun provideCurrencyApi(retrofit: Retrofit) = retrofit.create(CurrencyApi::class.java)
-
-    }
 
 }

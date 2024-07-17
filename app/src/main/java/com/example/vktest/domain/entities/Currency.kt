@@ -1,6 +1,6 @@
 package com.example.vktest.domain.entities
 
 data class Currency(
-    val code: String,
-    val value: Double
+    val `data`: Data,
+    val meta: Meta
 )
