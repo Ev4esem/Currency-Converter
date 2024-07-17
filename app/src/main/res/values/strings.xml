@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">VkTest</string>
     <string name="input">input</string>
+    <string name="error">Упс...Что то пошло так</string>
     <string name="converter">Конвертировать</string>
     <string name="_0">0</string>
     <string name="amount">Количество</string>
+    <string name="valid_amount">Пожалуйста введите корректное количество</string>
 </resources>
